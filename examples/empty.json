@@ -1,0 +1,120 @@
+{
+  "database": {
+    "table"      : "",
+    "description": "",
+
+    "id": {
+      "name": {
+        "default"   : "_id",
+        "snakeCase" : "_id",
+        "camelCase" : "Id",
+        "pascalCase": "Id",
+        "constant"  : "_ID",
+
+        "variable"  : {
+          "php": "$id",
+          "js" : "id"
+        }
+      },
+      "description" : "ID (PK).",
+      "type"        : "int",
+      "PHPDocParam" : "int",
+      "JSDocParam"  : "number",
+      "acceptNull"  : false,
+      "isString"    : false,
+      "isFloat"     : false,
+      "stringLength": 0,
+
+      "view": {
+        "label"      : "ID",
+        "placeholder": "ID"
+      }
+    },
+
+    "options": {
+      "useDeleteField"   : true,
+      "DeleteField"      : "is_deleted",
+
+      "useCreatedAtField": true,
+      "createdAtField"   : "created_at"
+      }
+  },
+
+  "fields": {
+    "empty": {
+      "": {
+        "default"   : "",
+        "snakeCase" : "",
+        "camelCase" : "",
+        "pascalCase": "",
+        "constant"  : "",
+
+        "variable"  : {
+          "php": "$empty",
+          "js" : "empty"
+        }
+      },
+      "description" : "",
+      "type"        : "",
+      "PHPDocParam" : "",
+      "JSDocParam"  : "",
+      "acceptNull"  : false,
+      "isString"    : true,
+      "isFloat"     : false,
+      "stringLength": 64,
+
+      "view": {
+        "label"      : "Empty",
+        "placeholder": "(nothing here)"
+      }
+    }
+  },
+
+  "model": {
+    "className"  : "",
+    "description": "",
+    "namespace"  : "App\\Model"
+  },
+
+  "controller": {
+    "className"  : "Controller",
+    "description": "",
+    "namespace"  : "App\\Controller",
+
+    "messages": {
+      "emptyField"     : "Este campo não pode ser vazio.",
+      "tooLongField"   : "Este campo é muito longo.",
+      "unexpectedError": "An unexpected error has occurred.",
+      "put"            : "Usuário registrado com sucesso.",
+      "patch"          : "Alterações salvas.",
+      "delete"         : "Exclusão de usuário concluida.",
+      "idNotFound"     : "A ID especificada não existe.",
+      "invalidFields"  : "Um ou mais campos estão incorretos."
+    }
+  },
+
+  "routes": {
+    "selectAll": "/users",
+    "base"     : "/user",
+    "put"      : "/put",
+    "patch"    : "/patch",
+    "delete"   : "/delete"
+  },
+
+  "views": {
+    "selectCard": {
+      "title": "user_id",
+      "subtitle": "created_at"
+    },
+    "selectAll": {
+      "templateName" : "ScreenUserSelect",
+      "componentName": "ScreenUserSelect",
+      "description": "Tela de seleção de usuários."
+    },
+    "form": {
+      "templateName" : "ScreenUserForm",
+      "componentName": "ScreenUserForm",
+      "description": "Formulário de usuários."
+    }
+  }
+}

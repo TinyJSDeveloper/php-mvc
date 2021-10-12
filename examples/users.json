@@ -1,0 +1,204 @@
+{
+  "database": {
+    "table"      : "users",
+    "description": "Tabela de usuários.",
+
+    "id": {
+      "name": {
+        "default"   : "user_id",
+        "snakeCase" : "user_id",
+        "camelCase" : "userId",
+        "pascalCase": "UserId",
+        "constant"  : "USER_ID",
+
+        "variable"  : {
+          "php": "$id",
+          "js" : "id"
+        }
+      },
+      "description" : "ID deste usuário (PK).",
+      "type"        : "int",
+      "PHPDocParam" : "int",
+      "JSDocParam"  : "number",
+      "acceptNull"  : false,
+      "isString"    : false,
+      "isFloat"     : false,
+      "stringLength": 0,
+
+      "view": {
+        "label"      : "ID",
+        "placeholder": "ID"
+      }
+    },
+
+    "options": {
+      "useDeleteField"   : true,
+      "DeleteField"      : "is_deleted",
+
+      "useCreatedAtField": true,
+      "createdAtField"   : "created_at"
+      }
+  },
+
+  "fields": {
+    "created_at": {
+      "name": {
+        "default"   : "created_at",
+        "snakeCase" : "created_at",
+        "camelCase" : "createdAt",
+        "pascalCase": "CreatedAt",
+        "constant"  : "CREATED_AT",
+
+        "variable"  : {
+          "php": "$id",
+          "js" : "id"
+        }
+      },
+      "description" : "Data de registro deste usuário.",
+      "type"        : "date",
+      "PHPDocParam" : "String",
+      "JSDocParam"  : "string",
+      "acceptNull"  : false,
+      "isString"    : true,
+      "isFloat"     : false,
+      "stringLength": 10,
+
+      "view": {
+        "label"      : "Data de registro",
+        "placeholder": "DD/MM/YYYY"
+      }
+    },
+
+    "name": {
+      "name": {
+        "default"   : "name",
+        "snakeCase" : "name",
+        "camelCase" : "name",
+        "pascalCase": "Name",
+        "constant"  : "NAME",
+
+        "variable"  : {
+          "php": "$id",
+          "js" : "id"
+        }
+      },
+      "description" : "Nome deste usuário.",
+      "type"        : "string",
+      "PHPDocParam" : "String",
+      "JSDocParam"  : "string",
+      "acceptNull"  : false,
+      "isString"    : true,
+      "isFloat"     : false,
+      "stringLength": 64,
+
+      "view": {
+        "label"      : "Nome",
+        "placeholder": "Nome"
+      }
+    },
+
+    "email": {
+      "name": {
+        "default"   : "email",
+        "snakeCase" : "email",
+        "camelCase" : "email",
+        "pascalCase": "Email",
+        "constant"  : "EMAIL",
+
+        "variable"  : {
+          "php": "$id",
+          "js" : "id"
+        }
+      },
+      "description" : "Endereço de e-mail deste usuário.",
+      "type"        : "string",
+      "PHPDocParam" : "String",
+      "JSDocParam"  : "string",
+      "acceptNull"  : false,
+      "isString"    : true,
+      "isFloat"     : false,
+      "stringLength": 64,
+
+      "view": {
+        "label": "E-mail",
+        "placeholder": "E-mail"
+      }
+    },
+
+    "password": {
+      "name": {
+        "default"   : "password",
+        "snakeCase" : "password",
+        "camelCase" : "password",
+        "pascalCase": "Password",
+        "constant"  : "PASSWORD",
+
+        "variable"  : {
+          "php": "$id",
+          "js" : "id"
+        }
+      },
+      "description" : "Senha deste usuário.",
+      "type"        : "string",
+      "PHPDocParam" : "String",
+      "JSDocParam"  : "string",
+      "acceptNull"  : false,
+      "isString"    : true,
+      "isFloat"     : false,
+      "stringLength": 64,
+
+      "view": {
+        "label"      : "Senha",
+        "placeholder": "Senha"
+      }
+    }
+  },
+
+  "model": {
+    "className"  : "User",
+    "description": "Modelo de usuários.",
+    "namespace"  : "App\\Model"
+  },
+
+  "controller": {
+    "className"  : "UserController",
+    "description": "Controlador de usuários.",
+    "namespace"  : "App\\Controller",
+
+    "messages": {
+      "emptyField"     : "Este campo não pode ser vazio.",
+      "tooLongField"   : "Este campo é muito longo.",
+      "unexpectedError": "An unexpected error has occurred.",
+      "put"            : "Usuário registrado com sucesso.",
+      "patch"          : "Alterações salvas.",
+      "delete"         : "Exclusão de usuário concluida.",
+      "idNotFound"     : "A ID especificada não existe.",
+      "invalidFields"  : "Um ou mais campos estão incorretos."
+    }
+  },
+
+  "routes": {
+    "selectAll": "/users",
+    "base"     : "/user",
+    "put"      : "/put",
+    "patch"    : "/patch",
+    "delete"   : "/delete"
+  },
+
+  "views": {
+    "selectCard": {
+      "title": "user_id",
+      "subtitle": "created_at"
+    },
+    "selectAll": {
+      "templateName" : "ScreenUserSelect",
+      "componentName": "ScreenUserSelect",
+      "description": "Tela de seleção de usuários."
+    },
+    "form": {
+      "templateName" : "ScreenUserForm",
+      "componentName": "ScreenUserForm",
+      "description": "Formulário de usuários."
+    }
+  }
+}

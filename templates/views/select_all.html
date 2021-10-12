@@ -1,0 +1,30 @@
+<!--
+@template #{{views.selectAll.templateName}}
+
+@description
+{{views.selectAll.description}}
+-->
+<template data-template-id="{{views.selectAll.templateName}}">
+  <div class="container">
+    <div class="columns">
+      <div class="column col-4 col-lg-9 col-mx-auto">
+
+        <div class="card mt-2 mb-2" v-for="dataItem in data.default">
+          <div class="card-header">
+            <div class="card-title h5">\{{ dataItem.{{views.selectCard.title}} }}</div>
+            <div class="card-subtitle text-gray">\{{ dataItem.{{views.selectCard.subtitle}} }}</div>
+          </div>
+
+          <div class="card-body">
+            <!-- ... -->
+          </div>
+
+          <div class="card-footer">
+            
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</template>

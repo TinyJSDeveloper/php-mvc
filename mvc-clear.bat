@@ -1,0 +1,1 @@
+forfiles /p output /s /m *.* /c "cmd /c del /a /f /q @path"

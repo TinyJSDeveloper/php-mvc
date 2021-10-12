@@ -1,0 +1,35 @@
+<!--
+@template #{{views.form.templateName}}
+
+@description
+{{views.form.description}}
+-->
+<template data-template-id="{{views.form.templateName}}">
+  <div class="container">
+    <div class="columns">
+      <div class="column col-4 col-lg-9 col-mx-auto">
+
+        <form>
+          <fieldset>
+            {{#each fields}}
+
+            <!-- @field "{{this.name.default}}" -->
+            <div :class="el.default.{{this.name.default}}.status === 'success'? 'form-group': 'form-group has-error'">
+              <label class="form-label" for="{{this.name.default}}">{{this.view.label}}</label>
+              <input class="form-input" type="text" name="{{this.name.default}}" placeholder="{{this.view.placeholder}}" v-model="data.default.{{this.name.default}}">
+              <p class="form-input-hint">\{{ el.default.{{this.name.default}}.message || '&nbsp;' }}</p>
+            </div>
+            {{/each}}
+
+            <div class="form-group">
+              <button :class="el.submit.disabled? 'btn btn-secondary': 'btn btn-primary'" type="button" v-on:click="submit" :disabled="el.submit.disabled">
+                <i :class="el.submit.disabled? 'icon loading': 'icon icon-check'"></i> Confirmar
+              </button>
+            </div>
+          </fieldset>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</template>
